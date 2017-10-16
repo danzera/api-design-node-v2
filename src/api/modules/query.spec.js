@@ -67,7 +67,7 @@ describe('Modules', () => {
     })
 
     describe('getAll', () => {
-      it('should get all documnets', async () => {
+      it('should get all documents', async () => {
         const usernames = ['student1', 'student2']
 
         const users = await Promise.all(usernames.map(async username => {

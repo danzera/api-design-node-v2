@@ -45,7 +45,7 @@ export const getOne = (model) => (req, res, next) => {
 }
 
 export const getAll = (model) => (req, res, next) => {
-
+	res.status(201).json({getAll : 'OK'});
 }
 
 export const findByParam = (model) => (req, res, next, id) => {
