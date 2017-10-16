@@ -57,7 +57,7 @@ export const getOne = (model) => (req, res, next) => {
 
 export const getAll = (model) => (req, res, next) => {
 	return controllers.getAll(model)
-		.then(doc => res.status(201).json(doc)) // doc refers to Mongo, where all resources are "documents"
+		.then(doc => res.json(doc)) // doc refers to Mongo, where all resources are "documents"
 		.catch(error => next(error))
 }
 
