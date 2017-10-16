@@ -65,10 +65,14 @@ export const findByParam = (model) => (req, res, next, id) => {
 	return controllers.findByParam(model, id)
 		.then(doc => {
 			if (!doc) {
-
+				next(new Error('Not Found Error'))
 			} else {
-
+				req.docFromId
+				next()
 			}
+		})
+		.catch(error => {
+			next(error)
 		})
 }
 
