@@ -19,20 +19,20 @@ const baseConfig = {
 let envConfig = {}
 
 switch (env) {
-	case 'development':
-	case 'dev':
-		envConfig = require('./dev').config
+  case 'development':
+  case 'dev':
+    envConfig = require('./dev').config
+    break;
+  case 'test':
+  case 'testing':
+    envConfig = require('./testing').config
+    break;
+  case 'prod':
+  case 'production':
+		envConfig = require('./prod').config
 		break;
-	case 'test':
-	case 'testing':
-		envConfig = require('./testing.js').config
-		break;
-	case 'prod':
-	case 'production':
-		envConfig = require('./prod.js').config
-		break;
-	default:
-		evnConfig = baseConfig
+  default:
+    envConfig = require('./dev').config
 }
 
-export default envConfig;
+export default merge(baseConfig, envConfig)
