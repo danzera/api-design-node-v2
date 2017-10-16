@@ -67,7 +67,7 @@ describe('Modules', () => {
     })
 
     describe('getAll', () => {
-      it('should get all documnets', async () => {
+      it('should get all documents', async () => {
         const usernames = ['student1', 'student2']
 
         const users = await Promise.all(usernames.map(async username => {
@@ -83,7 +83,7 @@ describe('Modules', () => {
     })
 
     describe('findByParam', () => {
-      it('should find model my id', async () => {
+      it('should find model by id', async () => {
         const user = (await controllers.createOne(User, {
           username: 'student1',
           passwordHash: '1234qwe'
