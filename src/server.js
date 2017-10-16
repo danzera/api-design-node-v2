@@ -11,7 +11,7 @@ connect()
 // setup basic routing for index route
 
 app.use('/signin', signin)
-app.use('/api', restRouter)
+app.use('/api', protect, restRouter) // can run as many pieces of middleware as you want, in this case 'protect' is an array with two pieces of middleware
 // catch all
 app.all('*', (req, res) => {
   res.json({ok: true})
