@@ -29,27 +29,47 @@ export const controllers = {
 }
 
 export const createOne = (model) => (req, res, next) => {
-
+	return controllers.createOne(model, req.body)
+		.then(doc => res.status(200).json(doc)) // doc refers to Mongo, where all resources are "documents"
+		.catch(error => next(error))
 }
 
 export const updateOne = (model) => async (req, res, next) => {
+	const docToUpdate = req.docFromId
+	const update = req.body
 
+	return controllers.updateOne(docToUpdate, update)
+		.then(doc => res.status(200).json(doc)) // doc refers to Mongo, where all resources are "documents"
+		.catch(error => next(error))
 }
 
 export const deleteOne = (model) => (req, res, next) => {
-
+	return controllers.deleteOne(req.docFromId)
+		.then(doc => res.status(200).json(doc)) // doc refers to Mongo, where all resources are "documents"
+		.catch(error => next(error))
 }
 
 export const getOne = (model) => (req, res, next) => {
-
+	return controllers.getOne(req.docFromId)
+		.then(doc => res.status(200).json(doc)) // doc refers to Mongo, where all resources are "documents"
+		.catch(error => next(error))
 }
 
 export const getAll = (model) => (req, res, next) => {
-	res.status(201).json({getAll : 'OK'});
+	return controllers.getAll(model)
+		.then(doc => res.status(200).json(doc)) // doc refers to Mongo, where all resources are "documents"
+		.catch(error => next(error))
 }
 
 export const findByParam = (model) => (req, res, next, id) => {
-  
+	return controllers.findByParam(model, id)
+		.then(doc => {
+			if (!doc) {
+
+			} else {
+
+			}
+		})
 }
 
 
