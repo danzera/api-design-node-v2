@@ -11,8 +11,9 @@ connect()
 // setup basic routing for index route
 
 app.use('/signin', signin)
+app.use('/api', restRouter) // MOUNT REST ROUTER
 
-// catch all
+// catch all -- WOULD GENERALLY WANT TO THROW A 404 ERROR INSTEAD OF HAVING A CATCH ALL
 app.all('*', (req, res) => {
   res.json({ok: true})
 })
