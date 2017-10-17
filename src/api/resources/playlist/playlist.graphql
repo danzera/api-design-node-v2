@@ -1,0 +1,15 @@
+type Playlist {
+	id: ID!
+	title: String!
+	# reference the Song type created in song.graphql
+	# files will be combined, so this file knows what a song is
+	songs: [Song]!
+	favorite: Boolean!
+}
+
+input UpdatedPlaylist {
+	id: ID!
+	title: String
+	songs: [NewSong]
+	favorite: Boolean
+}

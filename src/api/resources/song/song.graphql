@@ -1,0 +1,34 @@
+type Song {
+	# always use IDs, if you can
+	id: ID!
+	title: String!
+  url: String!
+  album: String
+  artist: String
+  rating: Int!
+  favorite: Boolean!
+}
+
+# the input type needed when you want to update a song
+# note the lack of required fields compared to the Song type
+# not every field is required in the case of an update
+input UpdatedSong {
+	id: ID!
+	title: String
+  url: String
+  album: String
+  artist: String
+  rating: Int
+  favorite: Boolean
+}
+
+input NewSong {
+	title: String!
+  url: String!
+  album: String
+  artist: String
+	# has a default, so not required when creating
+  rating: Int
+	# has a default, so not required when creating
+  favorite: Boolean
+}

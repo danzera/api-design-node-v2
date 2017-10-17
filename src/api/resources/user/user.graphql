@@ -1,0 +1,18 @@
+# This is a user
+type User {
+	# comments will show up in graphiQL documentation in reference to what is on the following line, User.id in this case
+	id: ID!
+	username: String!
+	createdAt: String! # will come from DB...?
+	updatedAt: String! # will come from DB...?
+}
+
+# inputs cannot reference types
+# would need to create another input with the same fields as the type if needed as an input
+input UpdatedUser {
+	username: String!
+}
+
+type Query {
+	getMe: User!
+}
