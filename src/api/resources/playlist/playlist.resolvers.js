@@ -27,5 +27,9 @@ export const playlistResolvers = {
   Mutation: {
     newPlaylist,
     updatePlaylist
-  }
+	},
+	
+	Playlist: {
+		
+	}
 }
