@@ -26,3 +26,10 @@ input NewSong {
   rating: Int
   favorite: Boolean
 }
+
+extend type Query {
+	# Song <- is the function name, which matches the resolver export
+	# -> Song is the type of the data that will be returned
+	Song(id: ID!): Song!
+	allSongs: [Song]! # has to return an array, may be empty
+}
