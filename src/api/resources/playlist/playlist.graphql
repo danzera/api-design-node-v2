@@ -16,3 +16,8 @@ extend type Query {
   Playlist(id: ID!): Playlist!
   allPlaylists: [Playlist]!
 }
+
+extend type Mutation {
+	Playlist(input: Playlist!): Playlist!
+	updatePlaylist(input: Playlist!): Playlist!
+}
