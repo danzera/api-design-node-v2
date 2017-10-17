@@ -1,21 +1,16 @@
 import { Playlist } from './playlist.model'
 
-// _ variable in the params is a placeholder -- will never be used
 const getPlaylist = (_, {id}) => {
-
-	// see solution branch
-
+  return Playlist.findById(id).exec()
 }
 
 const allPlaylists = () => {
-	
-	// see solution branch
-	
+  return Playlist.find({}).exec()
 }
 
-export const songResolvers = {
-	Query: {
-		allPlaylists,
-		Playlist: getPlaylist
-	}
+export const playlistResolvers = {
+  Query: {
+    allPlaylists,
+    Playlist: getPlaylist,
+  }
 }
